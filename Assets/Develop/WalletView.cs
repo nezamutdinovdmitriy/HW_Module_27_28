@@ -16,6 +16,8 @@ public class WalletView : MonoBehaviour
     {
         _wallet = wallet;
 
+        gameObject.SetActive(true);
+
         _wallet.Changed += OnChanged;
 
         OnChanged();
@@ -27,7 +29,7 @@ public class WalletView : MonoBehaviour
 
         foreach (Currency currency in _wallet.Currencies)
         {
-            text += $"{currency.Type}: {currency.Amount}\n";
+            text += $": {currency.Amount}\n";
         }
 
         _currencyText.text = text;
