@@ -654,7 +654,7 @@ GameObject:
   - component: {fileID: 1034074596}
   - component: {fileID: 1034074595}
   m_Layer: 0
-  m_Name: EnemyDestroyerExample
+  m_Name: DestroyerExample
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -723,7 +723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeLimit: 5
-  _viewType: 1
+  _viewType: 0
   _timerViewPrefab: {fileID: 3279521705955886195, guid: e1ecc57dde251d54cb435f12e555e2fc,
     type: 3}
   _sliderPrefab: {fileID: 7445872071536379805, guid: d01f98724d92bfb47970b9b5bf9f772b,
