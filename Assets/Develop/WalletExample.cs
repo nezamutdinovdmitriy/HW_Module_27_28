@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class WalletExample : MonoBehaviour
 {
-    private Wallet _wallet;
-
     [SerializeField] private WalletView _walletViewPrefab;
     [SerializeField] private Canvas _canvas;
+
+    private Wallet _wallet;
 
     private void Awake()
     {
@@ -18,7 +18,6 @@ public class WalletExample : MonoBehaviour
             );
 
         _walletView.Initialize(_wallet);
-
     }
 
     private void Update()

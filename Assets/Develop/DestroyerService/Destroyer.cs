@@ -23,7 +23,6 @@ public class Destroyer
         {
             if (_entity[i].Condition.Invoke())
             {
-                //_entity[i].Entity.Kill();
                 _entity[i].Entity.DestroySelf();
                 _entity.RemoveAt(i);
             }

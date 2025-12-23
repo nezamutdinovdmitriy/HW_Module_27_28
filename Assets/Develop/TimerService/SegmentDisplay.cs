@@ -9,14 +9,14 @@ public class SegmentDisplay : TimerDisplay
 
     public override void Initialize(TimerLogic timer)
     {
+        base.Initialize(timer);
+
         _segments = new List<GameObject>();
 
         int count = Mathf.CeilToInt(timer.TimeLimit);
 
         for (int i = 0; i < count; i++)
             _segments.Add(Instantiate(_timeSegmentPrefab, transform));
-
-        base.Initialize(timer);
     }
 
     protected override void UpdateVisual(float currentTime)
