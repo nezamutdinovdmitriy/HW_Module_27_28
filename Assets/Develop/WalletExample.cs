@@ -3,12 +3,20 @@ using UnityEngine;
 public class WalletExample : MonoBehaviour
 {
     private Wallet _wallet;
-    [SerializeField] private WalletView _walletView;
 
+    [SerializeField] private WalletView _walletViewPrefab;
+    [SerializeField] private Canvas _canvas;
 
     private void Awake()
     {
-        _wallet = new Wallet();
+        WalletView _walletView = Instantiate(_walletViewPrefab, _canvas.transform);
+
+        _wallet = new Wallet(
+            new Currency(CurrencyType.Coins),
+            new Currency(CurrencyType.Diamonds),
+            new Currency(CurrencyType.Energy)
+            );
+
         _walletView.Initialize(_wallet);
 
     }
@@ -17,10 +25,10 @@ public class WalletExample : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
             _wallet.Add(CurrencyType.Coins, 1);
-        
+
         if (Input.GetKeyDown(KeyCode.A))
             _wallet.Spend(CurrencyType.Coins, 1);
-        
+
         if (Input.GetKeyDown(KeyCode.W))
             _wallet.Add(CurrencyType.Diamonds, 1);
 

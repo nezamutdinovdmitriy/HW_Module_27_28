@@ -1,5 +1,9 @@
+using System;
+
 public class Currency
 {
+    public event Action AmountChanged;
+
     public Currency(CurrencyType type)
     {
         Type = type;
@@ -14,11 +18,17 @@ public class Currency
     public void Add(int value)
     {
         if (value > 0)
+        {
             Amount += value;
+            AmountChanged?.Invoke();
+        }
     }
     public void Spend(int value)
     {
         if (value > 0 && value <= Amount)
+        {
             Amount -= value;
+            AmountChanged?.Invoke();
+        }
     }
 }
